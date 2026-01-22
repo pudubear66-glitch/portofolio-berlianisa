@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Berlian Anisa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fff5f7;
+            scroll-behavior: smooth;
+            /* Latar belakang dengan pola lucu (Doodle Pattern) */
+            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+            background-attachment: fixed;
+        }
+
+        .section-container {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border: 2px solid #fce7f3;
+            border-radius: 2rem;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.05);
+        }
+
+        .pink-gradient {
+            background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 30px rgba(236, 72, 153, 0.1);
+        }
+
+        .nav-link:hover {
+            color: #db2777;
+        }
+
+        /* Jalur Pendidikan Grid */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            position: relative;
+        }
+
+        .edu-card {
+            background: white;
+            padding: 1.25rem;
+            border-radius: 1.5rem;
+            border: 2px solid #fce7f3;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .edu-card:hover {
+            border-color: #ec4899;
+            transform: scale(1.05);
+        }
+
+        /* Garis penghubung dekoratif */
+        .edu-path-line {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            right: 5%;
+            height: 4px;
+            background: #fbcfe8;
+            z-index: 0;
+            display: none;
+            border-radius: 2px;
+        }
+
+        @media (min-width: 1024px) {
+            .edu-path-line { display: block; }
+        }
+
+        .social-btn {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+            background: white;
+            color: #ec4899;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.1);
+        }
+
+        .social-btn:hover {
+            background: #ec4899;
+            color: white;
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .data-item {
+            padding: 1rem;
+            background: rgba(255, 236, 242, 0.5);
+            border-radius: 1.25rem;
+            border: 1px solid #fce7f3;
+            transition: all 0.3s ease;
+        }
+
+        .data-item:hover {
+            background: white;
+            border-color: #ec4899;
+        }
+
+        .family-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            border: 1px dashed #fbcfe8;
+            transition: all 0.3s ease;
+        }
+
+        .family-card:hover {
+            background: #fff9fb;
+            border-style: solid;
+            border-color: #ec4899;
+        }
+
+        /* Animasi mengambang untuk elemen dekoratif */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating-icon {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="text-gray-800 p-4 md:p-8">
+
+    <!-- Navigation -->
+    <nav class="max-w-6xl mx-auto mb-10 bg-white/70 backdrop-blur-md border border-pink-100 rounded-3xl px-6 py-4 flex justify-between items-center sticky top-4 z-50">
+        <span class="text-2xl font-bold text-pink-600">PORTOFOLIO</span>
+        <div class="hidden md:flex space-x-6 text-sm font-medium">
+            <a href="#home" class="nav-link">Beranda</a>
+            <a href="#data-pribadi" class="nav-link">Profil</a>
+            <a href="#keluarga" class="nav-link">Keluarga</a>
+            <a href="#pendidikan" class="nav-link">Pendidikan</a>
+            <a href="#pencapaian" class="nav-link">Pencapaian</a>
+        </div>
+        <a href="#contact-footer" class="bg-pink-500 text-white px-5 py-2 rounded-2xl text-sm hover:bg-pink-600 transition">Kontak</a>
+    </nav>
+
+    <main class="max-w-6xl mx-auto">
+        <!-- Hero Section (Updated: Name beside photo, career goal removed) -->
+        <section id="home" class="section-container">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
+                <div class="text-center md:text-left order-2 md:order-1 flex-1">
+			<span class="inline-block px-8 py-3 rounded-full bg-pink-100 text-pink-600 text-xl font-bold mb-4 tracking-wider uppercase">Selamat Datang! ✨</span>
+
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-8">
+                        Berlian Anisa
+                    </h1>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                        <button onclick="document.getElementById('data-pribadi').scrollIntoView()" class="bg-pink-500 text-white px-8 py-3 rounded-2xl shadow-lg shadow-pink-200 hover:bg-pink-600 transition">Data Pribadi</button>
+                        <button onclick="document.getElementById('pendidikan').scrollIntoView()" class="bg-white border border-pink-200 px-8 py-3 rounded-2xl hover:bg-pink-50 transition">Pendidikan</button>
+                    </div>
+                </div>
+                
+                <div class="relative order-1 md:order-2 flex justify-center">
+                    <div class="w-56 h-56 md:w-72 md:h-72 pink-gradient rounded-[3rem] overflow-hidden shadow-2xl relative z-10 flex items-center justify-center border-8 border-white floating-icon">
+                        <!-- Placeholder for photo -->
+                        <img src="foto_berlian.jpeg"></img>
+                    </div>
+                    <!-- Decorative background element -->
+                    <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-yellow-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Pribadi -->
+        <section id="data-pribadi" class="section-container">
+            <h2 class="text-3xl font-bold mb-10 text-center">
+                <i class="fa-solid fa-star text-yellow-400 mr-3"></i> Data Pribadi
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="data-item">
+                    <p class="text-[10px] text-pink-500 font-bold uppercase mb-1">Nama Lengkap</p>
+                    <p class="font-bold text-gray-800">Berlian Anisa Nur Ayu Setyo Putri</p>
+                </div>
+                <div class="data-item">
+                    <p class="text-[10px] text-pink-500 font-bold uppercase mb-1">Tempat, Tgl Lahir</p>
+                    <p class="font-bold text-gray-800">Madiun, 26 Januari 2008</p>
+                </div>
+                <div class="data-item lg:col-span-2">
+                    <p class="text-[10px] text-pink-500 font-bold uppercase mb-1">Alamat</p>
+                    <p class="font-bold text-gray-800 text-sm">KPR Tamanasri Blok F1 No. 12, Kec. Panekan, Kab. Magetan, Jawa Timur, Indonesia</p>
+                </div>
+                <div class="data-item">
+                    <p class="text-[10px] text-pink-500 font-bold uppercase mb-1">Jenis Kelamin</p>
+                    <p class="font-bold text-gray-800">Perempuan</p>
+                </div>
+                <div class="data-item">
+                    <p class="text-[10px] text-pink-500 font-bold uppercase mb-1">Kewarganegaraan</p>
+                    <p class="font-bold text-gray-800">WNI</p>
+                </div>
+                <div class="data-item">
+                    <p class="text-[10px] text-pink-500 font-bold uppercase mb-1">Agama</p>
+                    <p class="font-bold text-gray-800">Islam</p>
+                </div>
+                <div class="data-item">
+                    <p class="text-[10px] text-pink-500 font-bold uppercase mb-1">Pekerjaan</p>
+                    <p class="font-bold text-gray-800">Pelajar</p>
+                </div>
+                <div class="data-item">
+                    <p class="text-[10px] text-pink-500 font-bold uppercase mb-1">Status Perkawinan</p>
+                    <p class="font-bold text-gray-800">Belum Kawin</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Riwayat Keluarga -->
+        <section id="keluarga" class="section-container">
+            <h2 class="text-3xl font-bold mb-10 text-center">
+                <i class="fa-solid fa-house-chimney-window text-pink-500 mr-3"></i> Riwayat Keluarga
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Ayah -->
+                <div class="family-card text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-500 mx-auto mb-4">
+                        <i class="fa-solid fa-user-tie text-2xl"></i>
+                    </div>
+                    <p class="text-[10px] text-blue-500 font-bold uppercase tracking-widest mb-1">Ayah</p>
+                    <p class="font-bold text-gray-800 text-lg">Agung Setyo Pamungkas</p>
+                    <p class="text-xs text-gray-500 mt-2">Pekerjaan : Swasta</p>
+                </div>
+
+                <!-- Ibu -->
+                <div class="family-card text-center">
+                    <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center text-pink-500 mx-auto mb-4">
+                        <i class="fa-solid fa-user-nurse text-2xl"></i>
+                    </div>
+                    <p class="text-[10px] text-pink-500 font-bold uppercase tracking-widest mb-1">Ibu</p>
+                    <p class="font-bold text-gray-800 text-lg">Wiwin Wintari</p>
+                    <p class="text-xs text-gray-500 mt-2">Pekerjaan : Ibu Rumah Tangga</p>
+                </div>
+
+                <!-- Saudara -->
+                <div class="family-card text-center">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-500 mx-auto mb-4">
+                        <i class="fa-solid fa-user text-2xl"></i>
+                    </div>
+                    <p class="text-[10px] text-yellow-600 font-bold uppercase tracking-widest mb-1">Saudara (Adik)</p>
+                    <p class="font-bold text-gray-800 text-lg">Maulana Hafiz Gibran Setyo Putra</p>
+                    <p class="text-xs text-gray-500 mt-2">Anak ke : 2</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pendidikan -->
+        <section id="pendidikan" class="section-container">
+            <h2 class="text-3xl font-bold mb-12 text-center text-gray-800">
+                <i class="fa-solid fa-graduation-cap text-pink-500 mr-2"></i> Riwayat Pendidikan
+            </h2>
+            <div class="relative">
+                <div class="edu-path-line"></div>
+                <div class="edu-grid">
+                    <div class="edu-card">
+					<a href="https://maps.app.goo.gl/fXu2Sm2DYwvisUMU6?g_st=aw" target="_blank">
+                        <div class="edu-logo-container">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK1omyQs7iIyx_xL6vQdsDQzXqMgn2BY3uDw&s" alt="Logo Sekolah" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                <i class="fa-solid fa-children text-pink-600 text-xl hidden"></i>
+                            </div>
+                        <h4 class="font-bold text-pink-600">PAUD</h4>
+                        <p class="text-xs font-bold">PAUD Widya Kusuma, Kab. Magetan</p>
+                        <p class="text-[10px] text-gray-400 mt-1">2012</p>
+					</a>
+                    </div>
+                    <div class="edu-card">
+					<a href="https://maps.app.goo.gl/8KhYVRyztcq7ThnW6" target="_blank">
+                        <div class="edu-logo-container">
+                                <img src="https://i.pinimg.com/222x/2d/57/40/2d57400bf03bbdbfd9e33560e4cfc62c.jpg" alt="Logo Sekolah" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                <i class="fa-solid fa-children text-pink-600 text-xl hidden"></i>
+                            </div>
+                        <h4 class="font-bold text-pink-600">TK A</h4>
+                        <p class="text-xs font-bold">TK Dharma Wanita Pertiwi, Kab. Magetan</p>
+                        <p class="text-[10px] text-gray-400 mt-1">2013</p>
+					</a>
+                    </div>
+                    <div class="edu-card">
+					<a href="https://maps.app.goo.gl/pFAVACX9FcNWde7G8?g_st=aw" target="_blank">
+                        <div class="edu-logo-container">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm9I6GoD0pDc_P4kszMD19OEtl_UH-cOTuuA&s" alt="Logo Sekolah" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                <i class="fa-solid fa-children text-pink-600 text-xl hidden"></i>
+                            </div>
+                        <h4 class="font-bold text-pink-600">TK B</h4>
+                        <p class="text-xs font-bold">TK IT Robbani Singosari, Kab. Malang</p>
+                        <p class="text-[10px] text-gray-400 mt-1">2014</p>
+					</a>
+                    </div>
+                    <div class="edu-card">
+					<a href="https://maps.app.goo.gl/h12gpuaSkG6z6GDRA?g_st=aw" target="_blank">
+                        <div class="edu-logo-container">
+                                <img src="https://yt3.googleusercontent.com/ytc/AIdro_lbA81bSmqDWeY4euSTtxz8ug4S2JgwrFUTQ75Elkx18g=s900-c-k-c0x00ffffff-no-rj" alt="Logo Sekolah" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                <i class="fa-solid fa-children text-pink-600 text-xl hidden"></i>
+                            </div>
+                        <h4 class="font-bold text-pink-600">SD</h4>
+                        <p class="text-xs font-bold">SD Muhammadiyah 1 Magetan</p>
+                        <p class="text-[10px] text-gray-400 mt-1">2014 - 2020</p>
+					</a>
+                    </div>
+                    <div class="edu-card">
+					<a href="https://maps.app.goo.gl/GParmfUCoDnCsVkKA?g_st=aw" target="_blank">
+                       <div class="edu-logo-container">
+                                <img src="https://lh3.googleusercontent.com/proxy/V5fOJ8GAN0SwWu2PKrnEG7hBuCojIML6pAhVYGJk95cZDBMNymXMgZ5UxhGDMMnd_PdvDmVSRR1U_1buq9QZKgdGa9wVq2Ek60xDEhJqZD-JDOsyJtE6iCF9Bg" alt="Logo Sekolah" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                <i class="fa-solid fa-children text-pink-600 text-xl hidden"></i>
+                            </div>
+                        <h4 class="font-bold text-pink-600">SMP</h4>
+                        <p class="text-xs font-bold">SMPN 1 Magetan</p>
+                        <p class="text-[10px] text-gray-400 mt-1">2020 - 2023</p>
+					</a>
+                    </div>
+                    <div class="edu-card">
+					<a href="https://maps.app.goo.gl/uRNZmvJMBjyfWpzw5?g_st=aw" target="_blank">
+                        <div class="edu-logo-container">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-C0IDYx7vtd5_vIaL0CGaWwVgFDD2TJsMvQ&s" alt="Logo Sekolah" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                <i class="fa-solid fa-children text-pink-600 text-xl hidden"></i>
+                            </div>
+                        <h4 class="font-bold text-pink-600">SMA</h4>
+                        <p class="text-xs font-bold">SMAN 1 Magetan</p>
+                        <p class="text-[10px] text-gray-400 mt-1">2023 - Sekarang</p>
+					</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prestasi & Pengalaman -->
+        <div class="grid md:grid-cols-2 gap-8">
+            <section id="pencapaian" class="section-container">
+                <h2 class="text-2xl font-bold mb-8"><i class="fa-solid fa-trophy text-yellow-500 mr-2"></i> Pencapaian</h2>
+                <div class="space-y-4">
+                    <div class="p-4 bg-white rounded-2xl border border-pink-100 flex items-center shadow-sm">
+                        <div class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center text-yellow-600 mr-4">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm">Peserta Babak Semi Final (Tingkat Provinsi) KMNR Se Indonesia Ke-12</p>
+                            <p class="text-[10px] text-gray-400">2017</p>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white rounded-2xl border border-pink-100 flex items-center shadow-sm">
+                        <div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center text-pink-600 mr-4">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm">Semifinalis KMNR Se Indonesia Ke-13</p>
+                            <p class="text-[10px] text-gray-400">2018</p>
+                        </div>
+                    </div>
+					<div class="p-4 bg-white rounded-2xl border border-pink-100 flex items-center shadow-sm">
+                        <div class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center text-yellow-600 mr-4">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm">Peserta Babak Semi Final (Tingkat Provinsi) KMNR Se Indonesia Ke-15</p>
+                            <p class="text-[10px] text-gray-400">2020</p>
+                        </div>
+                    </div>
+					<div class="p-4 bg-white rounded-2xl border border-pink-100 flex items-center shadow-sm">
+                        <div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center text-pink-600 mr-4">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm">Meraih Medali Perunggu pada Brilliant Minds Olympiad yang Diselenggarakan oleh Satu Prestasi X Asosiasi Olimpiade Nusantara X HMJK UNSOED</p>
+                            <p class="text-[10px] text-gray-400">2025</p>
+                        </div>
+                    </div>
+					<div class="p-4 bg-white rounded-2xl border border-pink-100 flex items-center shadow-sm">
+                        <div class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center text-yellow-600 mr-4">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm">Meraih Bronze Medal Bidang Sains dan Teknologi pada Olimpiade Sains Airlangga (OSA) yang Diselenggarakan oleh Universitas Airlangga</p>
+                            <p class="text-[10px] text-gray-400">2025</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="section-container">
+                <h2 class="text-2xl font-bold mb-8"><i class="fa-solid fa-briefcase text-blue-500 mr-2"></i> Pengalaman</h2>
+                <div class="space-y-4">
+                    <div class="p-4 bg-white rounded-2xl border border-pink-100 shadow-sm">
+                        <p class="font-bold text-sm text-pink-600 mb-1">Berhasil Hingga Tahap III (Wawancara) dalam Seleksi Pengurus Forum Anak Kabupaten Magetan.</p>
+                        <p class="text-xs text-gray-600 mb-2">2024</p>
+                        <p class="text-[11px] text-gray-400 leading-relaxed">Proses Ini Mengasah Kemampuan Public Speaking dan Pemahaman Saya Mengenai Pemenuhan Hak Anak dan Perlindungan Anak.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer: Moto & Kontak Visual -->
+    <footer id="contact-footer" class="max-w-6xl mx-auto section-container text-center !mb-10">
+        <div class="mb-12">
+            <h3 class="text-pink-500 font-bold uppercase tracking-widest text-xs mb-4">Motto Hidup🧸</h3>
+            <p class="text-2xl md:text-3xl font-bold italic text-gray-800 leading-relaxed">
+                "kejarlah ilmu sampai ke negeri Korea, karena di China gak ada haechan"
+            </p>
+        </div>
+
+        <div class="mb-10">
+            <p class="text-gray-500 font-medium mb-6">Silakan Hubungi Saya!</p>
+            <div class="flex justify-center space-x-6">
+                <!-- Ikon Gambar Kontak yang bisa diklik -->
+                <a href="https://wa.me/+6281333238559" target="_blank" class="social-btn" title="WhatsApp">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                </a>
+                <a href="https://instagram.com/berliannissaa" target="_blank" class="social-btn" title="Instagram">
+                    <i class="fa-brands fa-instagram text-2xl"></i>
+                </a>
+                <a href="mailto:anisaberlian88@gmail.com" class="social-btn" title="Email">
+                    <i class="fa-solid fa-envelope text-2xl"></i>
+                </a>
+            </div>
+        </div>
+
+        <hr class="border-pink-50 mb-8 w-24 mx-auto border-2 rounded-full">
+        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">© 2026 — berlianisa</p>
+    </footer>
+
+</body>
+</html>
